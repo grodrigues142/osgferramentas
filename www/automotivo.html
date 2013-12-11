@@ -1,0 +1,2512 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Feramentas OSG</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/elementos_links.css" />
+		
+		<link rel="stylesheet" href="jquery.mobile-1.3.2/jquery.mobile-1.3.2.min.css" />
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="jquery.mobile-1.3.2/jquery.mobile-1.3.2.min.js"></script>
+		
+				
+		<script>
+			
+			//$(document).bind("mobileinit", function() {
+			$(document).ready(function(){
+			
+				/*
+				$("#video_menu").bind("ended", function() {
+				   //TO DO: Your code goes here...
+				   ///alert('acabou');
+				});
+				*/
+				
+				
+				/// HOME ///////
+				$("#video_menu").on("timeupdate", function(event){
+					//onTrackedVideoFrame(this.currentTime, this.duration);
+					
+					if(this.currentTime >= 16) {
+				    	$('#home_video #content_menu').show();
+				    	$('#home_video #content_video').hide();
+				    }
+					
+				});
+				
+				
+				
+				/*
+				/// CABECOTE /////////////////////////////////////////////////
+				$("#cabecote_video_menu").on("timeupdate", function(event){
+					if(this.currentTime >= 2) {
+				    	$('#cabecote_1 #content_menu').show();
+				    	$('#cabecote_1 #content_video').hide();
+				    }
+					
+				});
+				
+				
+				/// BLOCOMOTOR /////////////////////////////////////////////////
+				$('#blocomotor_1 #content_video #cabecote_video_menu').on("timeupdate", function(event){
+					if(this.currentTime >= 2) {
+				    	$('#blocomotor_1 #content_menu').show();
+				    	$('#blocomotor_1 #content_video').hide();
+				    }
+					
+				});
+				
+				
+				/// VIRABREQUIM /////////////////////////////////////////////////
+				$('#virabrequim_1 #content_video #cabecote_video_menu').on("timeupdate", function(event){
+					if(this.currentTime >= 2) {
+				    	$('#virabrequim_1 #content_menu').show();
+				    	$('#virabrequim_1 #content_video').hide();
+				    }
+					
+				});
+				*/
+				
+			});
+			
+			
+			function tocarVideo(elemento){
+				$('#'+ elemento).attr({'autoplay':'true'});
+			};
+			
+			
+			function armarTrigger(elemento){				
+				$('#'+ elemento +' #content_menu').hide();
+				$('#'+ elemento +' #content_video').show();
+				
+				$('#'+ elemento +' #content_video #cabecote_video_menu').get(0).play();
+				
+				$('#'+ elemento +' #content_video #cabecote_video_menu').bind("ended", function() {
+					$('#'+ elemento +' #content_menu').show();
+					$('#'+ elemento +' #content_video').hide();
+				});
+			}
+			
+		</script>
+		
+	</head>
+	
+	<body>
+		<div data-role="page" id="home_video">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+		
+		
+		
+		
+		
+		
+		
+			
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/Menu_Automotivo_v02.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/tela-submenu-auto.png);">
+				
+						
+						<a href="#cabecote_1" data-ajax="false" onclick="armarTrigger('cabecote_1');"><div class="bt_hit bt_automotivo_principal bt_geral_principal" id="bt_cabecote_1"></div></a>
+						<a href="#blocomotor_1" data-ajax="false" onclick="armarTrigger('blocomotor_1');"><div class="bt_hit bt_automotivo_principal bt_geral_principal bt_blocomotor" id="bt_blocomotor_1"></div></a>
+						<a href="#bielas_1" data-ajax="false" onclick="armarTrigger('bielas_1');"><div class="bt_hit bt_automotivo_principal bt_geral_principal bt_bielas" id="bt_bielas_1"></div></a>
+						<a href="#virabrequim_1" data-ajax="false" onclick="armarTrigger('virabrequim_1');"><div class="bt_hit bt_automotivo_principal bt_geral_principal bt_virabrequim" id="bt_virabrequim_1"></div></a>
+						<div style="clear:both;"></div>
+						
+						<a href="#cabecote_2" data-ajax="false" onclick="armarTrigger('cabecote_2');"><div class="bt_hit bt_automotivo_principal bt_geral" id="bt_cabecote_2"></div></a>
+						<a href="#blocomotor_2" data-ajax="false" onclick="armarTrigger('blocomotor_2');"><div class="bt_hit bt_automotivo_principal bt_geral bt_blocomotor" id="bt_blocomotor_2"></div></a>
+						<a href="#bielas_2" data-ajax="false" onclick="armarTrigger('bielas_2');"><div class="bt_hit bt_automotivo_principal bt_geral bt_bielas" id="bt_bielas_2"></div></a>
+						<a href="#virabrequim_2" data-ajax="false" onclick="armarTrigger('virabrequim_2');"><div class="bt_hit bt_automotivo_principal bt_geral bt_virabrequim" id="bt_virabrequim_2"></div></a>
+						<div style="clear:both;"></div>
+						
+						<a href="#cabecote_3" data-ajax="false" onclick="armarTrigger('cabecote_3');"><div class="bt_hit bt_automotivo_principal bt_geral" id="bt_cabecote_3"></div></a>
+						<a href="#blocomotor_3" data-ajax="false" onclick="armarTrigger('blocomotor_3');"><div class="bt_hit bt_automotivo_principal bt_geral bt_blocomotor" id="bt_blocomotor_3"></div></a>
+						<a href="#bielas_1" data-ajax="false" onclick="armarTrigger('bielas_3');"><div class="bt_hit bt_automotivo_principal bt_geral bt_bielas" id="bt_bielas_3"></div></a>
+						<a href="#virabrequim_3" data-ajax="false" onclick="armarTrigger('virabrequim_3');"><div class="bt_hit bt_automotivo_principal bt_geral bt_virabrequim" id="bt_virabrequim_3"></div></a>
+						<div style="clear:both;"></div>
+						
+						<a href="#cabecote_4" data-ajax="false" onclick="armarTrigger('cabecote_4');"><div class="bt_hit bt_automotivo_principal bt_geral" id="bt_cabecote_4"></div></a>
+						<a href="#blocomotor_4" data-ajax="false" onclick="armarTrigger('blocomotor_4');"><div class="bt_hit bt_automotivo_principal bt_geral bt_blocomotor" id="bt_blocomotor_4"></div></a>
+						<a href="#bielas_4" data-ajax="false" onclick="armarTrigger('bielas_4');"><div class="bt_hit bt_automotivo_principal bt_geral bt_bielas" id="bt_bielas_4"></div></a>
+						<a href="#virabrequim_4" data-ajax="false" onclick="armarTrigger('virabrequim_4');"><div class="bt_hit bt_automotivo_principal bt_geral bt_virabrequim" id="bt_virabrequim_5"></div></a>
+						<div style="clear:both;"></div>
+						
+						<a href="#cabecote_5" data-ajax="false" onclick="armarTrigger('cabecote_5');"><div class="bt_hit bt_automotivo_principal bt_geral" id="bt_cabecote_5"></div></a>
+						<a href="#blocomotor_5" data-ajax="false" onclick="armarTrigger('blocomotor_5');"><div class="bt_hit bt_automotivo_principal bt_geral bt_blocomotor" id="bt_blocomotor_5"></div></a>
+						<a href="#bielas_5" data-ajax="false" onclick="armarTrigger('bielas_5');"><div class="bt_hit bt_automotivo_principal bt_geral bt_bielas" id="bt_bielas_5"></div></a>
+						<a href="#virabrequim_5" data-ajax="false" onclick="armarTrigger('virabrequim_5');"><div class="bt_hit bt_automotivo_principal bt_geral bt_virabrequim" id="bt_virabrequim_5"></div></a>
+						<div style="clear:both;"></div>
+						
+						<a href="#cabecote_6" data-ajax="false" onclick="armarTrigger('cabecote_6');"><div class="bt_hit bt_automotivo_principal bt_geral" id="bt_cabecote_6"></div></a>
+						<a href="#blocomotor_6" data-ajax="false" onclick="armarTrigger('blocomotor_6');"><div class="bt_hit bt_automotivo_principal bt_geral bt_blocomotor" id="bt_blocomotor_6"></div></a>
+						<a href="#bielas_6" data-ajax="false" onclick="armarTrigger('bielas_6');"><div class="bt_hit bt_automotivo_principal bt_geral bt_bielas" id="bt_bielas_6"></div></a>
+						<a href="#virabrequim_6" data-ajax="false" onclick="armarTrigger('virabrequim_6');"><div class="bt_hit bt_automotivo_principal bt_geral bt_virabrequim" id="bt_virabrequim_6"></div></a>
+						<div style="clear:both;"></div>
+						
+						<a href="#blocomotor_7" data-ajax="false" onclick="armarTrigger('blocomotor_7');"><div class="bt_hit bt_automotivo_principal bt_geral bt_blocomotor_sobra" id="bt_blocomotor_7"></div></a>
+						<a href="#virabrequim_7" data-ajax="false" onclick="armarTrigger('virabrequim_7');"><div class="bt_hit bt_automotivo_principal bt_geral bt_virabrequim_sobra" id="bt_virabrequim_7"></div></a>
+						<div style="clear:both;"></div>
+						
+						<a href="#blocomotor_8" data-ajax="false" onclick="armarTrigger('blocomotor_8');"><div class="bt_hit bt_automotivo_principal bt_geral bt_blocomotor_sobra" id="bt_blocomotor_8"></div></a>
+						<div style="clear:both;"></div>
+						
+						<a href="#blocomotor_9" data-ajax="false" onclick="armarTrigger('blocomotor_9');"><div class="bt_hit bt_automotivo_principal bt_geral bt_blocomotor_sobra" id="bt_blocomotor_9"></div></a>
+						<div style="clear:both;"></div>
+					</div>
+				</div>
+				
+			</div>
+			
+			
+						
+			
+			
+			
+			
+			
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="cabecote_1">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content">
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/1Cabecote/Cabecote_SequenciaFerramentas.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/tela-submenu-cabecotes.png);">
+				
+						<a href="#foto_15" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote bt_geral_cabecote_primeiro" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_2" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_12" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote" id="bt_cabecote_1_1"></div></a>
+						<div style="clear:both;"></div>
+						
+						<a href="#foto_3" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote bt_geral_cabecote_baixo" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_16" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote bt_geral_cabecote_baixo_ultimo" id="bt_cabecote_1_1"></div></a>
+						<div style="clear:both;"></div>
+					</div>
+				</div>
+				
+				
+				
+				
+					<div data-role="popup" id="foto_2" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/BrocaEscalonada.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_3" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/CAO-GDXL.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_15" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/PAO_wedge.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_12" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/NRT.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_16" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/PAO.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="cabecote_2">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/1Cabecote/Cabecote_1_Phoenix_PAO_wedge.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/PAO.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="cabecote_3">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/1Cabecote/Cabecote_2_Broca_Escalonada_Especial.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/BrocaEscalonada.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="cabecote_4">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/1Cabecote/Cabecote_3_Macho_Laminador_NRT.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/NRT.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="cabecote_5">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/1Cabecote/Cabecote_4_Broca_CAO_GDXL.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/CAO-GDXL.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="cabecote_6">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/1Cabecote/Cabecote_5_Phoenix_PAO.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/PAO.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="blocomotor_1">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/2Bloco/Bloco_SequenciaFerramentas.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/Submenu_Bloco_Motor.png);">
+						<a href="#foto_15" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_blocomotor" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_16" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_blocomotor" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_5" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_blocomotor" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_2" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_blocomotor" id="bt_cabecote_1_1"></div></a>
+						<div style="clear:both;"></div>
+						
+						<a href="#foto_14" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_blocomotor" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_4" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_blocomotor" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_19" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_blocomotor" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_1" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_blocomotor" id="bt_cabecote_1_1"></div></a>
+						<div style="clear:both;"></div>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+					<div data-role="popup" id="foto_15" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/PAO_wedge.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_16" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/PAO.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_5" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/WDO-30D.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_2" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/BrocaEscalonada.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_14" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/VP-DC-MT.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_4" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/TRS-HO-10D.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_19" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/PXD.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_1" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/alargador.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="blocomotor_2">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/2Bloco/Bloco_1_Phoenix_PAO_Wedge.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/PAO_wedge.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="blocomotor_3">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/2Bloco/Bloco_2_Phoenix_PAO.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/PAO.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="blocomotor_4">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/2Bloco/Bloco_3_Broca_30D.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/WDO-30D.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="blocomotor_5">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/2Bloco/Bloco_4_Broca_Escalonada_Especial.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/BrocaEscalonada.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="blocomotor_6">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/2Bloco/Bloco_5_Broca_TRS_10D.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/TRS-HO-10D.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="blocomotor_7">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/2Bloco/Bloco_6_Macho_VP_DC_MT.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/VP-DC-MT.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="blocomotor_8">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/2Bloco/Bloco_7_Broca_Phoenix_PXD.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/PXD.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="blocomotor_9">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/2Bloco/Bloco_8_Alargador_Especial.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/alargador.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="bielas_1">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content">
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/3Biela/Bielas_SequenciaFerramentas.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/Submenu_Bielas.png);">
+				
+						<a href="#foto_17" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote bt_geral_cabecote_primeiro" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_2" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_13" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote" id="bt_cabecote_1_1"></div></a>
+						<div style="clear:both;"></div>
+						
+						<a href="#foto_19" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote bt_geral_cabecote_baixo" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_5" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote bt_geral_cabecote_baixo_ultimo" id="bt_cabecote_1_1"></div></a>
+						<div style="clear:both;"></div>
+					</div>
+				</div>
+				
+				
+				
+				
+					<div data-role="popup" id="foto_17" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/PSE.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_2" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/BrocaEscalonada.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_13" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/S-XPF.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_19" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/PXD.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_5" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/WDO-30D.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="bielas_2">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/3Biela/Bielas_1_Phoenix_PSE.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/PSE.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="bielas_3">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/3Biela/Bielas_2_Broca_Escalonada_Especial.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/BrocaEscalonada.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="bielas_4">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/3Biela/Bielas_3_Macho_Laminador_SXPF.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/S-XPF.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="bielas_5">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/3Biela/Bielas_4_Broca_Phoenix_PXD.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/PXD.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="bielas_6">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/3Biela/Bielas_5_Broca_WDO_30D.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/WDO-30D.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="virabrequim_1">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content">
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/4Virabrequim/Virabrequim_SequenciaFerramentas.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/Submenu_Virabrequim.png);">
+				
+						<a href="#foto_7" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote bt_geral_cabecote_primeiro" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_14" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote" id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_13" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote" id="bt_cabecote_1_1"></div></a>
+						<div style="clear:both;"></div>
+						
+						<a href="#foto_9" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote " id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_6" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote " id="bt_cabecote_1_1"></div></a>
+						<a href="#foto_5" data-rel="popup" data-position-to="window" data-transition="pop"><div class="bt_hit bt_geral_cabecote " id="bt_cabecote_1_1"></div></a>
+						<div style="clear:both;"></div>
+					</div>
+				</div>
+				
+				
+				
+				
+					
+					<div data-role="popup" id="foto_7" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/Escareador.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_14" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/VP-DC-MT.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_13" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/S-XPF.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_9" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/FX-ZDS.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_6" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/WDO-PLT.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+					<div data-role="popup" id="foto_5" data-overlay-theme="a" data-theme="d" data-corners="false">
+						<div class="div_centralizadora"><a href="#" data-rel="back">
+							<img id="img_ferramenta_popup" src="conteudo/imagem/WDO-30D.png" class="centralizar_elemento" />
+						</a>
+						</div>
+					</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="virabrequim_2">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/4Virabrequim/Virabrequim_1_Escareador_Especial.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/Escareador.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="virabrequim_3">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/4Virabrequim/Virabrequim_2_Macho_VP_DC_MT.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/VP-DC-MT.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="virabrequim_4">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/4Virabrequim/Virabrequim_3_Macho_Laminador_SXPF.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/S-XPF.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="virabrequim_5">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/4Virabrequim/Virabrequim_4_Rebaixador_FX_ZDS.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/FX-ZDS.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="virabrequim_6">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/4Virabrequim/Virabrequim_5_Brocal_WDO_PLT.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/WDO-PLT.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div data-role="page" id="virabrequim_7">
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->	
+			<div data-role="header" data-position="fixed">
+				<a href="#" data-icon="back" data-rel="back">voltar</a>
+				<h1>Feramentas OSG</h1>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="content">
+				<div class="div_centralizadora" id="content_video">
+					<video width="1024" height="600" id="cabecote_video_menu" class="centralizar_elemento_content" autoplay>
+						<source src="conteudo/video/1Motor_com_Menu_01_Automotivo/4Virabrequim/Virabrequim_6_Brocal_WDO_30D.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				
+				
+				<div id="content_menu" class="div_centralizadora com_bg" style="display:none;">
+					<div class="centralizar_elemento_content" style="background-image:url(conteudo/imagem/WDO-30D.png);"></div>
+				</div>
+			</div>
+			<!-- 
+			FOOTER
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+			<div data-role="footer" class="nav-glyphish-example" data-position="fixed">
+				<div data-role="navbar" class="nav-glyphish-example" data-grid="b" data-position="fixed">
+					<ul>
+						<li><a href="index.html#home" id="page_home" data-icon="home" data-ajax="false">Home</a></li>
+						<li><a href="ferramentas.html" id="page_ferramentas" data-icon="grid" data-transition="flip" data-ajax="false">Ferramentas</a></li>
+						<li><a href="#txt_info" id="page_sobre" data-icon="info" data-rel="popup" data-transition="slideup">Sobre</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--  //////////// SOBRE //////////////   -->
+			<div id="txt_info" data-role="popup" data-overlay-theme="a" class="ui-content" style="margin-top:-290px; max-width:331px;" class="ui-corner-all">
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="padding:17px;">
+					<p style="text-align:justify; text-shadow:none;">
+						A OSG se orgulha por ser um fornecedor com a solução completa em ferramentas. 
+						Estamos determinados a alcançar o crescimento contínuo, contribuindo para o avanço das indústrias de todo o mundo.
+						Ter o apoio e confiança de nossos clientes sempre foi nosso compromisso. 
+						Através do nosso know-how, alta tecnologia e excelência no atendimento, oferecemos produtos e serviços de alta qualidade aos nossos clientes, razão essa para "Acreditar na OSG".
+					</p>
+					<p style="font-size:9px; color:#B3B3B3; text-align:center; text-shadow:none;">
+						copyright 2013. Todos os direitos reservados
+					</p>
+				</div>
+			</div>
+			<!-- 
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			-->
+		</div>
+
+
+
+
+
+
+	
+	</body>
+</html>

@@ -1,0 +1,181 @@
+/* BOTOES PADRAO */
+.bt_hit {
+	position:relative;
+	float:left;
+	cursor:pointer;
+	/* background-color: rgba(0, 153, 0, 0.46); */
+}
+.bt_root_principal {
+	width: 300px;
+	height: 200px;
+	top: 202px;
+}
+.bt_automotivo_principal {
+	width: 218px;
+	height: 20px;
+	top: 52px;
+	left: 53px;
+}
+
+
+
+
+
+
+
+/* BOTOES SEPARADOS 
+
+
+=> home
+	*/
+	#bt_automotivo {
+		left: 28px;
+	}
+	#bt_aeroespacial {
+		left: 64px;
+	}
+	#bt_moldesematrizes {
+		left: 95px;
+	}
+	
+	
+	
+/*
+
+
+=> Automotivo
+	*/
+	.bt_geral_principal {
+		top: 52px;
+		height: 173px;
+		margin-bottom: 30px;
+	}
+	
+	.bt_geral {
+		margin-bottom: 9px;
+	}
+	
+	.bt_blocomotor {
+		left: 70px;
+	}
+	
+	.bt_blocomotor_sobra {
+		left: 288px;
+	}
+	
+	.bt_bielas {
+		left: 85px;
+	}
+	
+	.bt_virabrequim {
+		left: 100px;
+	}
+	.bt_virabrequim_sobra {
+		left: 536px;
+	}
+	
+	
+		
+	/*
+	
+	
+	=> Cabecote
+		*/
+		.bt_geral_cabecote {
+			width: 306px;
+			height: 199px;
+			top: 70px;
+			margin-bottom: 36px;
+			margin-left: 26px;
+		}
+			
+			.bt_geral_cabecote_primeiro {
+				left: 15px;
+			}
+	
+			.bt_geral_cabecote_baixo {
+				left: 173px;
+			}
+	
+			.bt_geral_cabecote_baixo_ultimo {
+				margin-left: 188px;
+			}
+	
+	
+		
+	/*
+	
+	
+	=> Blocomotor
+		*/
+		.bt_geral_blocomotor {
+			width: 244px;
+			height: 179px;
+			top: 85px;
+			left: 23px;
+			margin-bottom: 54px;
+		}
+	
+	
+	
+	
+	
+	
+/*
+
+
+=> Aeroespacial
+	*/
+	.bt_geral_principal_aeroespacial {
+		width:200px;
+		margin-left: 672px;
+	}
+	
+	.bt_aeroespacial_primeiro {
+		margin-bottom: 77px;
+	}
+	
+	.bt_aeroespacial_outros {
+		height:20px;
+		margin-bottom: 9px;
+	}
+		
+	/*
+	
+	
+	=> Sequencial
+		*/
+	.bt_sequencial_geral {
+		width: 363px;
+		height: 222px;
+		top: 57px;
+		margin-bottom: 24px;
+		margin-left: 81px;
+		margin-right: 50px;
+	}
+	
+	
+	
+	
+	
+	
+	
+/*
+
+
+=> Moldes e Matrizes
+	*/
+	.bt_sequencial_moldesematrizes_geral {
+		width: 363px;
+		height: 222px;
+		top: 57px;
+		margin-bottom: 24px;
+		margin-right: 5px;
+		left: 150px;
+	}
+	
+	.bt_moldesematrizes_ultimo {
+		margin-left: 313px;
+		left:0px;
+	}
+	

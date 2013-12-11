@@ -1,0 +1,41 @@
+/* CSS Document */
+.div_centralizadora {
+	text-align: center;
+	background-position:center;
+	background-repeat:no-repeat;
+	padding:0;
+}
+.centralizar_elemento{
+	width: 1024px;
+	height: 768px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	float: left;
+	background-position:center;
+	background-repeat:no-repeat;
+	/* margin-left: -512px; */
+}
+
+.com_bg {
+	height: auto;
+	min-height: 600px;
+	width: 1024px;
+	margin: 0 auto;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+
+.centralizar_elemento_content{
+	width: 1024px;
+	height: 600px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	float: left;
+	background-position:center;
+	background-repeat:no-repeat;
+	/* margin-left: -512px; */
+}
